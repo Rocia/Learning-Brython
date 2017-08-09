@@ -1,0 +1,18 @@
+'''
+Program to extract text from form fields!
+'''
+
+from browser import document, html
+    
+def show_values(event):
+    input = document["input16"].value
+    select = document["select16"]
+    option = select.options[select.selectedIndex].value
+    text = document["textarea16"].value
+    document["zone16"].clear()
+    document["zone16"] <= ("Value in INPUT field: {}".format(input),
+        html.BR(), "Selected option: {}".format(option),
+        html.BR(), "Value in TEXTAREA field: {}".format(text)
+        )
+
+document['button16'].bind('click', show_values)
